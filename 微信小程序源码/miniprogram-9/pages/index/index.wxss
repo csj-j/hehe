@@ -1,0 +1,111 @@
+/* 通用样式 */
+.page-container {
+  padding: 36rpx;
+}
+
+.header-container{
+  background-color: #dd1b0d;
+  color: #fff;
+  border-radius: 36rpx;
+  padding: 32rpx 64rpx;
+}   
+
+.header-container .header-1{
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+}
+.header-container .header-2{
+  display: flex;
+  justify-content: space-between;
+  font-size: 64rpx;
+}
+.header-container .header-3{
+  margin-top: 36rpx;
+  font-size: 24rpx;
+}
+
+/* 数据项通用样式 */
+.data-container,
+.light-control-container {
+  margin-top: 36rpx;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 300rpx);
+  grid-gap: 36rpx;
+}
+
+.data-item {
+  position: relative;
+  background-color: rgb(243, 242, 252);
+  height: 180rpx;
+  box-shadow: #cec9c9 0 0 8rpx;
+  border-radius: 36rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.data-item .data-text {
+  position: absolute;
+  top: 36rpx;
+  right: 80rpx;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.data-item .data-picture {
+  position: absolute;
+  height: 96rpx;
+  width: 96rpx;
+  left: 16rpx;
+  top: 16rpx;
+}
+
+.data-item .data-title {
+  font-size: 28rpx;
+  color: #7f7f7f;
+}
+
+.data-item .data-value {
+  font-size: 22rpx;
+  font-weight: bold;
+  color: #7f7f7f;
+}
+
+/* 在wxss文件末尾添加以下样式 */
+.enum-control-container {
+  margin-top: 36rpx;
+  background-color: rgb(243, 242, 252);
+  border-radius: 36rpx;
+  padding: 24rpx;
+  box-shadow: #cec9c9 0 0 8rpx;
+}
+
+.enum-title {
+  font-size: 32rpx;
+  color: #7f7f7f;
+  margin-bottom: 24rpx;
+  padding-left: 16rpx;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 20rpx;
+}
+
+.enum-btn {
+  flex: 1;
+  background-color: #3d77ff;
+  color: white;
+  text-align: center;
+  padding: 24rpx 0;
+  border-radius: 24rpx;
+  font-size: 28rpx;
+  transition: all 0.3s;
+}
+
+.enum-btn:active {
+  background-color: #2a5ac8;
+  transform: scale(0.95);
+}

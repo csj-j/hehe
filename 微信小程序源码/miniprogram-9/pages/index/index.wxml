@@ -1,0 +1,116 @@
+<!-- index.wxml -->
+<view class="page-container">
+<!-- 开头励志 -->
+<view class="header-container">
+    <view class="header-1">
+      <view>2025</view>
+      <view>天天向上</view>
+      <view>坚持不懈</view>
+    </view>
+    <view class="header-2">
+      <view>   慧心控制欢迎您</view>
+
+    </view>
+    <view class="header-3">
+      <view>成功不是终点，失败也非末日，最重要的是继续前进的勇气</view>
+    </view>
+  </view>
+
+  <!-- 中间数据 -->
+  <view class="data-container">
+    <!-- 数据项：设备状态 -->
+    <view class="data-item device-status">
+      <image src="/图片/设备状态.png" class="data-picture"/>
+      <view class="data-text">
+        <view class="data-title">设备状态</view>
+        <view class="data-value" wx:if="{{device_status.data.list[0].status == 1}}">在线</view>
+        <view class="data-value" wx:elif="{{device_status.data.list[0].status != 1}}" style="color: red;">离线</view>
+      </view>
+    </view>
+
+    <!-- 数据项：传感器状态 -->
+    <view class="data-item device-status">
+      <image src="/图片/传感器.png" class="data-picture"/>
+      <view class="data-text">
+        <view class="data-title">传输状态</view>
+        <view class="data-value" wx:if="{{device_status.data.list[0].status == 1}}">正常</view>
+        <view class="data-value" wx:elif="{{device_status.data.list[0].status != 1}}" style="color: red;">异常</view>
+      </view>
+    </view>
+
+    <!-- 数据项：环境温度 -->
+    <view class="data-item environment-temperature">
+      <image src="/图片/温度.png" class="data-picture"/>
+      <view class="data-text">
+        <view class="data-title">行驶路程</view>
+        <view class="data-value">{{onenet_data.data[5].value}}m</view>
+      </view>
+    </view>
+
+    <!-- 数据项：环境湿度 -->
+    <view class="data-item environment-humidity">
+      <image src="/图片/湿度.png" class="data-picture"/>
+      <view class="data-text">
+        <view class="data-title">电量</view>
+        <view class="data-value">{{onenet_data.data[3].value}}%</view>
+      </view>
+    </view>
+ <!-- 数据项：预留功能 -->
+ <view class="data-item humidifier-switch">
+      <image src="/图片/预留.png" class="data-picture"/>
+      <view class="data-text">
+        <view class="data-title">预留使用功</view>
+        <view class="data-value">
+          <switch checked="{{switch1_checked}}"bindchange="onenet_set_device_property" data-param="jiashiqi" color="#3d77ff"/>
+        </view>
+      </view>    
+    </view>
+
+    <!-- 数据项：预留功能 -->
+    <view class="data-item humidifier-switch">
+      <image src="/图片/功能.png" class="data-picture"/>
+      <view class="data-text">
+        <view class="data-title">预留使用功能</view>
+        <view class="data-value">
+          <switch checked="{{switch1_checked}}" bindchange="onenet_set_device_property" data-param="jiashiqi" color="#3d77ff"/>
+        </view>
+      </view>
+   
+    </view>
+  </view>
+
+
+
+
+<!-- 在page-container内，light-control-container之前添加以下代码 -->
+<view class="enum-control-container">
+  <view class="enum-title">手动控制</view>
+  <view class="button-group">
+    <view class="enum-btn" bindtap="onenet_set_device_property" data-param="derection" data-value="0">前进</view>
+    <view class="enum-btn" bindtap="onenet_set_device_property" data-param="derection" data-value="1">后退</view>
+    <view class="enum-btn" bindtap="onenet_set_device_property" data-param="derection" data-value="2">左转</view>
+    <view class="enum-btn" bindtap="onenet_set_device_property" data-param="derection" data-value="3">右转</view>
+  </view>
+</view>
+
+
+
+
+
+
+  <!-- 自动模式控制 -->
+  <view class="light-control-container">
+    <view class="data-item light-brightness">
+   
+      <view class="data-text">
+        <view class="data-title">自动模式</view>
+        <view class="data-value">
+         <switch checked="{{switch3_checked}}" bindchange="onenet_set_device_property" data-param="zidongmoshi" color="#3d77ff"/>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
